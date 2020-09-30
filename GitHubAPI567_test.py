@@ -20,7 +20,7 @@ class GitHubAPI567TestCase(unittest.TestCase):
         Tests that get_repo_data returns correct data
         """
         self.assertEqual(get_repo_data("derobertsw"),
-                         [('GitHubAPI567', 3), ('home', 2), ('ssw567_hw2_triangle', 9), ('Student-Repository', 30)])
+                         [('GitHubAPI567', 4), ('home', 2), ('ssw567_hw2_triangle', 9), ('Student-Repository', 30)])
 
 
 if __name__ == '__main__':
