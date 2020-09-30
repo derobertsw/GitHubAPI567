@@ -20,7 +20,7 @@ def get_repo_data(user_id: str) -> List:
         f"https://api.github.com/users/{user_id}/repos")
 
     if response.status_code != 200:
-        if response.status_code == 400:
+        if response.status_code == 400 or response.status_code == 404:
             raise ValueError("invalid user_id")
         else:
             raise RuntimeError("Service Unavailable")
@@ -41,8 +41,6 @@ def validate_user_id(user_id:str) -> None:
         raise ValueError("invalid user_id")
 
 def main() -> None:
-    print(get_repo_data("derobertsw"))
-
     for repo, count in get_repo_data("derobertsw"):
         print(f"Repo {repo} Number of commits: {count}")
 
